@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# Check if RSHIM_DEST is specified
+if [ -z "${RSHIM_DEST}" ]; then
+  cnt=0
+  for path in /dev/rshim*/rshim; do
+    if [ -e ${path} ]; then
+      echo "Found RShim device ${path}"
+      cnt=$((cnt+1))
+    fi
+  done
+  if [ $cnt -eq 0 ]; then
+    echo "RShim device not found"
+    exit -1
+  elif [ $cnt -eq 1 ]; then
+    export RSHIM_DEST=${path}
+  else
+    echo "Multiple RShim devices found"
+    echo "Please set environment variable RSHIM_DEST to one of them to select it"
+    exit -1
+  fi
+else
+  # Make sure the file exists
+  if [ ! -e ${RSHIM_DEST} ]; then
+    echo "Error: ${RSHIM_DEST} doesn't exist"
+    exit -1
+  fi
+fi
+
+if [ ! -r ${RSHIM_DEST} ]; then
+  echo "Error: Not able to read ${RSHIM_DEST}. Try it as root?"
+  exit -1
+fi
+
+# This is a wrapper to openocd. Find the openocd install path and
+# run it there since it requires the relative path of the configuration
+# files.
+cd ${0%/*}/../lib/openocd; ./openocd -f board/bluefield.cfg
