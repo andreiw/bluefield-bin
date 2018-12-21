@@ -74,10 +74,11 @@ image_list = (
     ("boot-desc", "Default boot menu item description", 57),
     ("boot-path", "Boot image path", 58),
     ("boot-args", "Arguments for boot image", 59),
-    ("boot-timeout", "Boot menu timeout", 60),
-    ("uefi-tests", "Specify what UEFI tests to run", 61),
-    ("image", "Boot image", 62),
-    ("initramfs", "In-memory filesystem", 63),
+    ("ramdisk", "In-memory UEFI block device", 60),
+    ("boot-timeout", "Boot menu timeout", 61),
+    ("uefi-tests", "Specify what UEFI tests to run", 62),
+    ("image", "Boot image", 63),
+    ("initramfs", "In-memory filesystem", 64),
 )
 
 # Map command-line option to (description, image ID)
