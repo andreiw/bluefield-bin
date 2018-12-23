@@ -69,16 +69,16 @@ image_list = (
     ("bl33-cert", "Non-Trusted Firmware BL3-3 certificate", 15),
     ("bl33", "Non-Trusted Firmware BL3-3", 5),
     # Images for UEFI
-    ("boot-acpi", "Name of the ACPI table", 55),
-    ("boot-dtb", "Name of the dtb file", 56),
-    ("boot-desc", "Default boot menu item description", 57),
-    ("boot-path", "Boot image path", 58),
-    ("boot-args", "Arguments for boot image", 59),
-    ("ramdisk", "In-memory UEFI block device", 60),
-    ("boot-timeout", "Boot menu timeout", 61),
-    ("uefi-tests", "Specify what UEFI tests to run", 62),
-    ("image", "Boot image", 63),
-    ("initramfs", "In-memory filesystem", 64),
+    ("boot-acpi", "Name of the ACPI table", 45),
+    ("boot-dtb", "Name of the dtb file", 46),
+    ("boot-desc", "Default boot menu item description", 47),
+    ("boot-path", "Boot image path", 48),
+    ("boot-args", "Arguments for boot image", 49),
+    ("ramdisk", "In-memory UEFI block device", 50),
+    ("boot-timeout", "Boot menu timeout", 51),
+    ("uefi-tests", "Specify what UEFI tests to run", 52),
+    ("image", "Boot image", 53),
+    ("initramfs", "In-memory filesystem", 54),
 )
 
 # Map command-line option to (description, image ID)
